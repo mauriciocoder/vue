@@ -1,0 +1,30 @@
+<!--https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js-->
+<html>
+<head>
+<title="Intro">
+</title>
+</head>
+<body>
+  <div id="root">
+    <p v-for="name in names">{{name}}</p>
+    <input type="text" id="nameInput" v-model="name"/>
+    <button v-on:click="addName">Add</button>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js"></script>
+  <script>
+    let app = new Vue ({
+      el: '#root',
+      data: {
+        names: ['Mauricio', 'Sara', 'Belinha', 'Eurice', 'China'],
+        name: ''
+      },
+      methods: {
+        addName() {
+          this.names.push(this.name)
+          this.name = ''
+        }
+      }
+    })
+  </script>
+</body>
+</html>
