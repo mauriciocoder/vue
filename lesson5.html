@@ -1,0 +1,42 @@
+<!--https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js-->
+<html>
+<head>
+<title="Intro">
+</title>
+<style>
+  .redButton {
+    color: red
+  }
+
+  .blueBackground {
+    background-color: blue
+  }
+</style>
+</head>
+<body>
+  <div id="root">
+    <button :class="{ redButton: isButtonRed, blueBackground: isBackgroundBlue }" :title="title" @click="toggleButton">Add</button>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js"></script>
+  <script>
+    let app = new Vue({
+      el: '#root',
+      data: {
+        title: 'New Title',
+        isButtonRed: false,
+        isBackgroundBlue: false
+      },
+      methods: {
+        showMessage() {
+          alert('Message!')
+        },
+
+        toggleButton() {
+          this.isButtonRed = !this.isButtonRed
+          this.isBackgroundBlue = !this.isBackgroundBlue
+        }
+      }
+    })
+  </script>
+</body>
+</html>
