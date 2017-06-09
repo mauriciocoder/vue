@@ -1,0 +1,51 @@
+<!--https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js-->
+<html>
+<head>
+<title="Intro">
+</title>
+<style>
+
+</style>
+</head>
+<body>
+  <div id="root">
+    <h2>All tasks</h2>
+    <table border=1>
+      <tr>
+        <th>Description</th>
+        <th>Completed</th>
+      </tr>
+      <tr v-for="task in tasks">
+        <td>{{task.description}}</td>
+        <td><input type="checkbox" :checked="task.completed" @click="changeStatus(task)"/></td>
+      </tr>
+    </table>
+    <h2>Incomplete Tasks</h2>
+    <p v-for="task in incompleteTasks">{{task.description}}</p>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#root',
+      data: {
+        message: 'Hello World!!!',
+        tasks: [
+          {description: 'task1', completed: true},
+          {description: 'task2', completed: false}
+        ]
+      },
+      methods: {
+        changeStatus(task) {
+          task.completed = !task.completed
+        }
+      },
+      computed: {
+        incompleteTasks() {
+          return this.tasks.filter(task => !task.completed)
+        }
+      }
+    })
+  </script>
+</body>
+</html>
