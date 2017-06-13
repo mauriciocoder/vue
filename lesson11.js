@@ -60,7 +60,6 @@ Vue.component('tabs', {
   `,
 
   mounted() {
-    alert('tabs mounted!')
     var tabs = this.$children
     bus.$on('select-tab', (tab) => {
       tabs.forEach((t) => {
