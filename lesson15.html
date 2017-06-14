@@ -1,0 +1,21 @@
+<!--https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js-->
+<html>
+<head>
+<title="Intro">
+</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.2/css/bulma.css"></link>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div id="root">
+    <progressview inline-template>
+      <div>
+        <h3>Your current progress is {{progress}}</h3>
+        <button @click="progress += 10">Add</button>
+      </div>
+    </progressview>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.4/vue.js"></script>
+  <script src="lesson15.js"></script>
+</body>
+</html>
